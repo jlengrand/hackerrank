@@ -15,9 +15,10 @@ object Solution {
       }
     }
 
-    print(Math.abs(sumOfDiag(a, n) - sumOfDiag(mirror(a), n)))
+    print(Math.abs(sumOfDiag2(a, n) - sumOfDiag2(mirror(a), n)))
   }
 
+  /* deprecated */
   def sumOfDiag(arr: Array[Array[Int]], dim: Int)= {
     var idx = 0
     var out = 0
@@ -26,6 +27,17 @@ object Solution {
       idx += 1
     }
     out
+  }
+
+  def sumOfDiag2(arr: Array[Array[Int]], dim: Int) = {
+    var total = 0
+    def iter(idx: Int): Int =
+      if (idx < dim) {
+        total += arr(idx)(idx)
+        iter(idx + 1)
+      }
+      else total
+    iter(0)
   }
 
   def mirror(arr: Array[Array[Int]]) =

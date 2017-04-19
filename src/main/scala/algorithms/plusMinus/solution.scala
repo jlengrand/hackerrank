@@ -1,4 +1,6 @@
-object Solution {
+package algorithms.CompareTheTriplets
+
+object PlusMinus {
 
   def main(args: Array[String]) {
     var n = scala.io.StdIn.readInt()
